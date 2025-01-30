@@ -3,7 +3,7 @@ import api from '../../services/api';
 import {Link} from 'react-router-dom';
 import './home.css';
 
-//URL da API: /movie/?api_key=259200299a990976070675ccb9fd1ca4
+//URL da API: /movie/?api_key=
 
 function Home() {
   const [ filmes, setFilmes] = useState([]);
@@ -14,7 +14,8 @@ function Home() {
     async function loadFilmes(){
       const response = await api.get("movie/now_playing", {
         params:{
-          api_key:"259200299a990976070675ccb9fd1ca4",
+          //get your API in the https://www.themoviedb.org/settings/api
+          api_key:"",
           language: "pt-BR",
           page: 1,
         }
